@@ -106,10 +106,10 @@ func (s *Server) TranslateTpl() error {
 	router.POST("/$object$", func(c *gin.Context) {
 		Post$Object$(c)
 	})
-	router.PUT("/$object$", func(c *gin.Context) {
+	router.PUT("/$object$/:id", func(c *gin.Context) {
 		Put$Object$(c)
 	})
-	router.DELETE("/$object$", func(c *gin.Context) {
+	router.DELETE("/$object$/:id", func(c *gin.Context) {
 		Delete$Object$(c)
 	})`
 

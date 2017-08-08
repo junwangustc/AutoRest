@@ -56,9 +56,7 @@ func main() {
 	if err := srv.Open(); err != nil {
 		srv.Close()
 	} else {
-
 		srv.TranslateTpl()
-
 	}
 
 }

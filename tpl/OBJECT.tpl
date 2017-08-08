@@ -78,7 +78,7 @@ func Post$Object$(c *gin.Context) {
 }
 func Put$Object$(c *gin.Context) {
 	var buffer bytes.Buffer
-	id := c.Query("id")
+	id := c.Param("id")
 	$POSTFORM_DATA$
 	stmt, err := db.Prepare("update $TABLE$ set $PUT_WHERE$ where id= ?;")
 	if err != nil {
@@ -99,7 +99,7 @@ func Put$Object$(c *gin.Context) {
 
 }
 func Delete$Object$(c *gin.Context) {
-	id := c.Query("id")
+	id := c.Param("id")
 	stmt, err := db.Prepare("delete from $TABLE$ where id= ?;")
 	if err != nil {
 		fmt.Print(err.Error())
